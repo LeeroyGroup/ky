@@ -1,77 +1,84 @@
 {
-	"name": "ky",
-	"version": "0.6.0",
-	"description": "Tiny and elegant HTTP client based on the browser Fetch API",
-	"license": "MIT",
-	"repository": "sindresorhus/ky",
-	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
-	},
-	"engines": {
-		"node": ">=10"
-	},
-	"scripts": {
-		"test": "xo && nyc ava && tsd-check && npm run cypress:run",
-		"cypress:open": "cypress open",
-		"cypress:run": "cypress run"
-	},
-	"files": [
-		"index.js",
-		"index.d.ts"
-	],
-	"keywords": [
-		"fetch",
-		"request",
-		"requests",
-		"http",
-		"https",
-		"fetching",
-		"get",
-		"url",
-		"curl",
-		"wget",
-		"net",
-		"network",
-		"ajax",
-		"api",
-		"rest",
-		"xhr",
-		"browser",
-		"got",
-		"axios",
-		"node-fetch"
-	],
-	"devDependencies": {
-		"@types/jquery": "^3.3.29",
-		"ava": "^1.0.1",
-		"body": "^5.1.0",
-		"codecov": "^3.1.0",
-		"create-test-server": "2.1.1",
-		"cypress": "^3.1.0",
-		"delay": "^4.1.0",
-		"esm": "^3.0.84",
-		"node-fetch": "^2.3.0",
-		"nyc": "^13.1.0",
-		"tsd-check": "^0.3.0",
-		"xo": "^0.23.0"
-	},
-	"xo": {
-		"envs": [
-			"browser",
-			"mocha"
-		],
-		"globals": [
-			"expect"
-		]
-	},
-	"ava": {
-		"babel": false,
-		"compileEnhancements": false,
-		"require": [
-			"esm",
-			"./test/_require"
-		]
-	}
+  "name": "ky",
+  "version": "0.6.0",
+  "description": "Tiny and elegant HTTP client based on the browser Fetch API",
+  "license": "MIT",
+  "repository": "sindresorhus/ky",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "test": "xo && nyc ava && tsd-check && npm run cypress:run",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "keywords": [
+    "fetch",
+    "request",
+    "requests",
+    "http",
+    "https",
+    "fetching",
+    "get",
+    "url",
+    "curl",
+    "wget",
+    "net",
+    "network",
+    "ajax",
+    "api",
+    "rest",
+    "xhr",
+    "browser",
+    "got",
+    "axios",
+    "node-fetch"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-destructuring": "^7.2.0",
+    "@babel/plugin-transform-spread": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@types/jquery": "^3.3.29",
+    "ava": "^1.0.1",
+    "body": "^5.1.0",
+    "codecov": "^3.1.0",
+    "create-test-server": "2.1.1",
+    "cypress": "^3.1.0",
+    "delay": "^4.1.0",
+    "esm": "^3.0.84",
+    "node-fetch": "^2.3.0",
+    "nyc": "^13.1.0",
+    "tsd-check": "^0.3.0",
+    "xo": "^0.23.0"
+  },
+  "xo": {
+    "envs": [
+      "browser",
+      "mocha"
+    ],
+    "globals": [
+      "expect"
+    ]
+  },
+  "ava": {
+    "babel": false,
+    "compileEnhancements": false,
+    "require": [
+      "esm",
+      "./test/_require"
+    ]
+  }
 }
