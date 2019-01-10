@@ -1,29 +1,21 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 exports.__esModule = true;
 exports.TimeoutError = exports.HTTPError = exports.default = void 0;
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+var _inheritsLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/inheritsLoose"));
 
-function _wrapNativeSuper(Class) { var _cache = typeof Map === "function" ? new Map() : undefined; _wrapNativeSuper = function _wrapNativeSuper(Class) { if (Class === null || !_isNativeFunction(Class)) return Class; if (typeof Class !== "function") { throw new TypeError("Super expression must either be null or a function"); } if (typeof _cache !== "undefined") { if (_cache.has(Class)) return _cache.get(Class); _cache.set(Class, Wrapper); } function Wrapper() { return _construct(Class, arguments, _getPrototypeOf(this).constructor); } Wrapper.prototype = Object.create(Class.prototype, { constructor: { value: Wrapper, enumerable: false, writable: true, configurable: true } }); return _setPrototypeOf(Wrapper, Class); }; return _wrapNativeSuper(Class); }
+var _wrapNativeSuper2 = _interopRequireDefault(require("@babel/runtime/helpers/wrapNativeSuper"));
 
-function isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _construct(Parent, args, Class) { if (isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
-
-function _isNativeFunction(fn) { return Function.toString.call(fn).indexOf("[native code]") !== -1; }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+var _extends3 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
 /*! MIT License © Sindre Sorhus */
 var getGlobal = function getGlobal(property) {
@@ -80,7 +72,7 @@ var deepMerge = function deepMerge() {
           value = deepMerge(returnValue[key], value);
         }
 
-        returnValue = _extends({}, returnValue, (_extends2 = {}, _extends2[key] = value, _extends2));
+        returnValue = (0, _extends3.default)({}, returnValue, (_extends2 = {}, _extends2[key] = value, _extends2));
       }
     }
   }
@@ -97,7 +89,7 @@ var retryAfterStatusCodes = new Set([413, 429, 503]);
 var HTTPError =
 /*#__PURE__*/
 function (_Error) {
-  _inheritsLoose(HTTPError, _Error);
+  (0, _inheritsLoose2.default)(HTTPError, _Error);
 
   function HTTPError(response) {
     var _this;
@@ -109,14 +101,14 @@ function (_Error) {
   }
 
   return HTTPError;
-}(_wrapNativeSuper(Error));
+}((0, _wrapNativeSuper2.default)(Error));
 
 exports.HTTPError = HTTPError;
 
 var TimeoutError =
 /*#__PURE__*/
 function (_Error2) {
-  _inheritsLoose(TimeoutError, _Error2);
+  (0, _inheritsLoose2.default)(TimeoutError, _Error2);
 
   function TimeoutError() {
     var _this2;
@@ -127,7 +119,7 @@ function (_Error2) {
   }
 
   return TimeoutError;
-}(_wrapNativeSuper(Error));
+}((0, _wrapNativeSuper2.default)(Error));
 
 exports.TimeoutError = TimeoutError;
 
@@ -138,10 +130,10 @@ var delay = function delay(ms) {
 };
 
 var timeout = function timeout(promise, ms) {
-  return Promise.race([promise, _asyncToGenerator(
+  return Promise.race([promise, (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee() {
-    return regeneratorRuntime.wrap(function _callee$(_context) {
+  _regenerator.default.mark(function _callee() {
+    return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -177,10 +169,9 @@ function () {
         throwHttpErrors = _ref4$throwHttpErrors === void 0 ? true : _ref4$throwHttpErrors,
         searchParams = _ref4.searchParams,
         json = _ref4.json,
-        otherOptions = _objectWithoutPropertiesLoose(_ref4, ["timeout", "hooks", "throwHttpErrors", "searchParams", "json"]);
-
+        otherOptions = (0, _objectWithoutPropertiesLoose2.default)(_ref4, ["timeout", "hooks", "throwHttpErrors", "searchParams", "json"]);
     this._retryCount = 0;
-    this._options = _extends({
+    this._options = (0, _extends3.default)({
       method: 'get',
       credentials: 'same-origin',
       // TODO: This can be removed when the spec change is implemented in all browsers. Context: https://www.chromestatus.com/feature/4539473312350208
@@ -239,12 +230,12 @@ function () {
       var fn =
       /*#__PURE__*/
       function () {
-        var _ref5 = _asyncToGenerator(
+        var _ref5 = (0, _asyncToGenerator2.default)(
         /*#__PURE__*/
-        regeneratorRuntime.mark(function _callee2() {
+        _regenerator.default.mark(function _callee2() {
           var response, _iterator, _isArray, _i4, _ref6, hook, modifiedResponse;
 
-          return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          return _regenerator.default.wrap(function _callee2$(_context2) {
             while (1) {
               switch (_context2.prev = _context2.next) {
                 case 0:
@@ -383,11 +374,11 @@ function () {
     var retry =
     /*#__PURE__*/
     function () {
-      var _ref7 = _asyncToGenerator(
+      var _ref7 = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee3() {
+      _regenerator.default.mark(function _callee3() {
         var ms;
-        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+        return _regenerator.default.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
@@ -441,12 +432,12 @@ function () {
   _proto._fetch =
   /*#__PURE__*/
   function () {
-    var _fetch2 = _asyncToGenerator(
+    var _fetch2 = (0, _asyncToGenerator2.default)(
     /*#__PURE__*/
-    regeneratorRuntime.mark(function _callee4() {
+    _regenerator.default.mark(function _callee4() {
       var _iterator2, _isArray2, _i5, _ref8, hook;
 
-      return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      return _regenerator.default.wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
